@@ -99,22 +99,22 @@ contract Ledger {
      
      /// Must be called by Borrower
      // tokens as a collateral 
-     function createNewLendingRequest() payable returns(address){
+    /* function createNewLendingRequest() payable returns(address){
           return newLr(0,uint _wanted_wei, uint _token_amount, uint _premium_wei,
                          string _token_name, string _token_infolink, address _token_smartcontract_address, 
                          uint _days_to_lend, bytes32 _ens_domain_hash);
-     }
+     }*/
 
      // domain as a collateral 
-     function createNewLendingRequestEns() payable returns(address){
+   /*  function createNewLendingRequestEns() payable returns(address){
           return newLr(1);
      }
      // reputation as a collateral
      function createNewLendingRequestRep() payable returns(address){
           return newLr(2);
-     }
+     }*/
 
-     function newLr(int _collateralType,uint _wanted_wei, uint _token_amount, uint _premium_wei,
+     function newLrAndSetData(int _collateralType,uint _wanted_wei, uint _token_amount, uint _premium_wei,
                          string _token_name, string _token_infolink, address _token_smartcontract_address, 
                          uint _days_to_lend, bytes32 _ens_domain_hash) payable returns(address out){
           // 1 - send Fee to wherToSendFee           
@@ -208,9 +208,9 @@ contract Ledger {
           return;             
      } 
 
-     function() payable{
+   /*  function() payable{
           createNewLendingRequest();
-     }
+     }*/
 }
 
 /*
